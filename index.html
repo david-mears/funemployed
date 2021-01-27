@@ -1,0 +1,243 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Funemployed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+  <style>
+    /* Slate Star Codex-style styles adapted from https://applieddivinitystudies.com/slatestarsubstack/ */
+    body {
+      background-color: #808080
+    }
+
+    .codex {
+      height: 60px;
+      position: relative;
+      top: 8px;
+      margin-right: 10px;
+    }
+
+    article div {
+      color: #333;
+      font: 12px/20px Verdana,  sans-serif;
+    }
+
+    h1 {
+      font-size: 16px;
+      line-height: 1.3em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: Georgia, "Bitstream Charter", serif;
+      font-weight: normal;
+    }
+
+    .post-date {
+      color: #888;
+      font-size: 10px;
+      font-family: Verdana, sans-serif;
+      letter-spacing: 1px;
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      padding: 5px 7px;
+      display: inline;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px #fff;
+    }
+
+    .post-date:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    .single-post {
+      border: 1px solid #D5D5D5;
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px 28px;
+      margin-bottom: 10px;
+    }
+
+    .single-post-container {
+      background: rgb(240, 240, 240);
+      padding: 10px 0px;
+      border-radius: 5px;
+    }
+
+    .wrap {
+      margin: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 1px;
+    }
+
+    .container {
+      justify-content: center;
+      width: 80%;
+      margin: auto;
+    }
+
+    textarea {
+      height: 200px;
+      width: 100%;
+    }
+
+    .single-post a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    .post {
+      padding: 0;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      padding-bottom: 8px;
+    }
+
+    .undertitle {
+      color: #ccc;
+      font-size: 10px;
+      line-height: 10px;
+      font-family: "Josefin Sans", "Times New Roman", Times, serif;
+      text-transform: uppercase;
+      margin-top: 13px;
+    }
+
+    .topbar {
+      text-decoration: none;
+      font-size: 64px;
+      max-height: 100px;
+      color: white;
+      font-family: 'Raleway', Open Sans, Arial, sans-serif;
+      text-align: center;
+      letter-spacing: 2px;
+      background: linear-gradient(to bottom, rgba(139,171,232,1) 0%, rgba(79,115,193,1) 100%);
+      padding-top: 50px;
+      padding-bottom: 21px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body class="sans">
+  <div class="wrap">
+    <div class="topbar">
+      <img class="codex" src="http://web.archive.org/web/20180223133145im_/http://slatestarcodex.com/wp-content/themes/responsive-pujugama-v2/images/codex.png">
+      Fun Em Ployed
+      <h2 class="undertitle">All the fun of the job hunt, none of the stress of work</h2>
+    </div>
+
+    <div class="single-post-container">
+      <div class="container">
+        <div class="single-post">
+
+          <article>
+            <h1 id="wanted">Jobs Board</h1>
+            <div>
+              <p id="jobAd" class="post-date">Click here to post a new job ad</p>
+              <p id="newResume" class="post-date">Click here to apply</p>
+            </div>
+            <div id="resume" style="display: none">
+              <p>
+                My skills, qualifications and accomplishments:
+              </p>
+              <ul>
+                <li id="qual0"></li>
+                <li id="qual1"></li>
+                <li id="qual2"></li>
+                <li id="qual3"></li>
+                <li id="qual4"></li>
+              </ul>
+            </div>
+            <div id="promptsSection" style="display: none">
+              <p><strong>Interview notes</strong></p>
+              <textarea></textarea>
+              <p id="promptsButton" class="post-date">Get interview question prompts</p>
+              <div id="promptsRevealed" style="display: none">
+                <p>Question prompts:</p>
+                <p>I see in your resume you write "<span id="qual5"></span>". Why do you think that's important for this job?</p>
+                <p>It says here "<span id="qual6"></span>", which is good. Can you give an example?</p>
+                <p>In your resume you list "<span id="qual7"></span>". Why shouldn't I throw you out of my office right now?</p>
+                <p>Now, one of the things that stood out to me in your resume was "<span id="qual8"></span>". How do you bring that aspect of yourself to your work?</p>
+                <p>What would you say is your best weakness?</p>
+                <p>What would you say is your <i>least</i> impressive strength?</p>
+                <p>We're looking for someone with leadership potential. Is that something you're interested in?</p>
+                <p>Tell me about a time you showed team-work skills.</p>
+                <p>Tell me about a time you failed. What did you learn from the experience?</p>
+                <p>How is your experience relevant to this role?</p>
+                <p>How do you explain the gaps in your employment history?</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Porn Star', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'TSA Agent', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent']
+    const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
+
+    const wanted = document.getElementById('wanted')
+    const promptsSection = document.getElementById('promptsSection')
+
+    document.getElementById('jobAd').addEventListener('click', function (event) {
+      resume.style.display = 'none';
+      promptsSection.style.display = 'initial';
+      wanted.innerText = wanteds[Math.floor(Math.random() * wanteds.length)] + ": " + jobs[Math.floor(Math.random() * jobs.length)];
+      document.getElementById('promptsRevealed').style.display = 'none';
+    }, false);
+
+    document.getElementById('promptsButton').addEventListener('click', function (event) {
+      const quals = qualifications.sort(() => Math.random() - 0.5);
+      qual5.innerText = quals[0]
+      qual6.innerText = quals[1]
+      qual7.innerText = quals[2]
+      qual8.innerText = quals[3]
+      document.getElementById('promptsRevealed').style.display = 'initial';
+    }, false);
+
+
+    const qualifications = ['Moderately good in bed', 'Dirty mind', 'Allergic to everything', 'Is a snake', 'Always hungry', 'Living a lie', 'A nasty rash', 'Smells like onions', 'Disorganized', 'Avid reader', 'Got a big net', 'Glorious mane', 'Lives in own reality', 'Somewhat paranoid', 'Spaceship', 'Loose', 'Merit Badge', 'Fishnet Stockings', 'Confession', 'Black Hole', 'Brownies', 'Ambidextrous', 'Bipolar', 'Peg Leg', 'Qualified dragon driver', 'Six months left to live', 'Jacked forearms', 'Experienced drinker of box wine', 'Permanently handcuffed', 'Spoiling for a fight', 'Slimy', 'Willing to trade up to £7 worth of chutney', 'Own social media profile', 'Born on the streets', 'Fear of being loved', 'Has memorized Shrek', 'Deaf in one ear', 'Emotionally abusive', 'Skilled musician', 'Cardboard box owner', 'No depth perception', 'Able to grunt', 'Always carry a whip', 'Open', 'Says yes to literally everything', 'Chainsaws for hands', 'Touching backstory', 'Is actually an undercover boss', 'Deep', 'Sonic screwdriver', 'Sus', 'Easily angered', 'Emphatically not a racist', 'Father is a doctor', 'Extensive knowledge of memes', 'Will wear cape to work', 'Multiple tooth cavities', 'Pro-death', 'I value you as a person', 'Member of of the Conservative Christian Association', 'Can WordArt', 'Intermediate in Sarcasm', 'Is committed 100% to everything', 'Beautiful teeth', 'Likes chocolate', 'Have had a stroke', 'Has a monocle', 'Multiple personality disorder', 'Exceptional number of knuckles', 'Clammy to the touch', 'Night terrors', 'No filter', 'Looking to grow', 'Used to like rock music', 'Incubating a virus', 'Wide sexual appetite', 'Retired', 'Opportunistic thief', 'Designed, developed and tested a mini-boomerang', 'Sleeps in late', 'Sneaky', 'Former customer',
+      'Competent Australian accent', 'Impeached twice', 'No sense of humor', 'Authentic German accent', 'Self-respect', 'False teeth', 'Toxically masculine', 'Weak sense of object permanence', 'Has been described as ethereal', 'Sits on chairs back-to-front (with hat pointing forwards)', 'Survival skills', 'Postgraduate degree in Difficult Knocks', 'Katana', 'Seeking the Holy Grail', '1 dollar (USD)', 'Tastes fishy',
+      'Piercing', 'Drive', 'Evil laugh', 'Sloth fan', 'Handlebar moustache', 'Emanates a sort of Christmassy aura', 'Has never been to Boston in the fall', 'Insatiable appetite', 'Easily distracted', 'Fancy hat', 'Impending sense of doom', 'Self-loathing', 'Buoyant', 'Foul-mouthed', 'Marriage on the rocks',
+      'Scarf addict', 'Unable to blink both eyes at once', 'Skilled at toasting bread', 'Ventriloquism', 'Speaks at 1.5x speed', 'A dirty mind', 'Terrible at following instructions', 'Successfully fended off over 16 harassment accusations', 'Knows all the constellations', 'Fired from previous jobs for openly carrying firearms at the workplace', 'Utter pillock',
+      'Adventurous haircut', 'Open to the possibility of cannibalism', 'License to can', 'Unable to lie', 'Sonic screwdriver', 'Excellent nails', 'An open, festering wound', 'Experience in fields', 'Wings', 'Chargeable, mobile telephone', 'Facial blindness/prosopagnosia', 'Sees race',
+      'Briefly went viral on YouTube', 'Made out of milk', 'Extremely online', 'Loud voice', 'Brings in flapjacks every day', 'Can see carrots at night', 'Shames other people for minor infractions', 'Thought David Cameron was an alright bloke', 'Malnourished', 'Soft hands',
+      'Successfully managed a team of hyenas', 'Was raised by a pack of wolves', 'Hooks for hands', 'Obsessed with honey, which I spell as hunny for some reason', 'Enjoy true crime podcasts', 'Convinced most things are better in spray form', 'Reflective skin', 'Has a negative weight', 'Cannot feel my toes', 'Screw you, hire me', 'Multiple scalps',
+      'Nothing Left to Lose!', 'Happy-go-lucky attitude', 'Inappropriately topless', 'Proud to be British', 'Jealous of Scottish people', 'Communes with fish', 'Lip-reader', 'Excellent tiptoeing', 'Dead inside', 'Can I bring my sidekick, Pencil Boy?',
+      'One word: cougars', 'Drug habit', 'Slurs words', 'Had a good time on holiday in Tahiti in 2009', 'Short attention span', 'Water-resistant', 'Scented', 'Moist',
+      'Got a flaming sword', 'Indecisive', 'Flammable', 'Apple-bobbing champion', 'Got a sack', 'Dislikes pizza', 'Firebreathing', 'Recognises interviewer off Tinder', 'Three-piece suit',
+      'Passive aggressive', 'Fell through a time-portal in Neolithic Europe and found self in the distant future', 'Rain is favourite weather', 'Is able to distinguish muffins from kittens', 'Unspecified dark past that I get away with by being charismatic', 'Fifty tattoos', 'Good swimmer', 'Brought a bottle of rum to the interview', 'Has a hat which reads Thug Lyf', 'Trapped in the closet (not a metaphor)', 'Extensive emotional range', 'Methodist', 'Experiments on others without informed consent', 'Willing to sue', 'Believes that Barack Obama died in 2019', 'Can turn neck really quick', 'Former child',
+    'Gambled away inheritance', 'Conservative dress sense', "Pronounces hamburger as 'handburger'", 'Overqualified', 'Below the legal age for this kind of work', "Eager Devil's Advocate", 'Makes models of buses out of old wine crates', 'Sells postcards on Etsy',
+    'Irrational', 'Can deploy jazz hands at short notice', 'Smells of marijuana', 'Unlucky', 'Interrupts people by yawning', 'Google Fu', 'Will give enemies a taste of the Claw', 'Really bad aim', 'Confidently predicts events',
+      'Can cause cookies to appear at will', 'Profoundly selfish', 'High right now (I wrote this while high)', 'Patient to a fault', 'Striking, purple eyes',
+    'My greatest weakness is that I am invisible', 'In denial about the fact I am bald', 'Has been intending to fix the shower curtain for the whole duration of the pandemic', 'Can find way home after work', 'Disorderly and insubordinate', 'Has spread over 3 hurtful rumours', 'Blunt', 'One of eighteen siblings', 'Has never seen Star Wars', 'Gag reflex',
+      "Maintains good hygiene 'down there'", 'Able to make up believable excuses', 'Family values', 'No intention of going on a killing spree', 'Extremely uncomfortable with the idea of working as part of a team or reporting to anyone', 'Beard needs a trim', 'Several red flags', 'Has never held down a job for more than a few months', 'Original sinner', 'Casts no shadow', 'Attractive to bees',
+    'Privileged', 'Naturally camouflaged', 'Overly familiar', 'Always getting into fights']
+      // Paused here. I would like to read some example CVs to get ideas. The below ideas were copied and pasted and need improvement.
+    //   'X-ray Vision', 'Nutcracker', 'Balls', 'Fifty Cats', 'Foam Sword', 'Shallow', 'Self-Entitled', 'Snatch', 'Tre
+    // nch Coat', 'Slutty', 'Tramp Stamps', 'Sweat', 'Boats', 'Fairy Dust', 'Red Panda', 'Private Jet', 'Tight Quarters', 'Erotica Collection', 'Furry
+    // ', 'Italian Accent', 'Sheltered', 'Yoga Pants', 'Club', 'Edible Underwear', 'Brick', 'Telenovela', 'Rapid', 'Buddhism', 'Crack', 'Piece of Cake
+    // ', 'Package', 'Six-Pack', 'Critical Mass', 'Gluttony', 'Tentacles', 'Wasp', 'Tickle', 'Apocalypse', 'Minion', 'Emotionally Unstable', 'Online D
+    // egree', 'Bad Luck', 'Opium Den', 'Cougar', 'El Diablo', 'French Accent', 'Addictive Personality', 'Level', 'Hungover', 'Disability', 'Illiterat
+    // e', 'Hallucinates', 'Pathological Liar', 'Game Tester', 'Organic', 'Files', 'Captain', 'Burning Bush', 'Wheelchair', 'Trisexual', 'Handlebars',
+    // 'Coat Hanger', 'Pound', 'Implants', 'Hears Voices', 'Dungeon']
+    const resume = document.getElementById('resume')
+    document.getElementById('newResume').addEventListener('click', function (event) {
+      wanted.innerText = "Curriculum Vitae"
+      resume.style.display = 'initial';
+      const quals = qualifications.sort(() => Math.random() - 0.5);
+      qual0.innerText = quals[0]
+      qual1.innerText = quals[1]
+      qual2.innerText = quals[2]
+      qual3.innerText = quals[3]
+      qual4.innerText = quals[4]
+      promptsSection.style.display = 'none';
+      document.getElementById('promptsRevealed').style.display = 'none';
+    }, false);
+  </script>
+</body>
+</html>
