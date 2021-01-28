@@ -6,6 +6,10 @@
   <title>Funemployed</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+  <meta property="og:title" content="Funemployed">
+  <meta property="og:description" content="Game">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/44967334/106075161-031e9a00-6105-11eb-9062-946254ee32db.png">
+  <meta property="og:url" content="https://david-mears.github.io/funemployed/">
   <style>
     /* Slate Star Codex-style styles */
     body {
@@ -217,13 +221,13 @@
       'Living a lie', 'A nasty rash', 'Smells like onions', 'Disorganized', 'Avid reader', 'Got a big net', 'Glorious mane',
       'Lives in own reality', 'Somewhat paranoid', 'Likes to pretend that on spaceship', 'Loose-limbed', 'Motivated by badges',
       'Scout merit badge', 'Stuck by husband when found guilty of murder', 'Member of the Campaign for Nuclear Disarmament',
-      'Fishnet Stockings', 'Confession', 'Black Hole', 'Brownies', 'Ambidextrous', 'Bipolar', 'Peg Leg', 'Qualified dragon driver',
-      'Six months left to live', 'Jacked forearms', 'Experienced drinker of box wine', 'Permanently handcuffed',
+      'Fishnet Stockings', 'Has a confession to make', 'Studied black holes', 'No middle name', 'Ambidextrous', 'Has a peg leg', 'Qualified dragon driver',
+      'Six months left to live', 'Left forearm is jacked', 'Experienced drinker of box wine', 'Permanently handcuffed',
       'Spoiling for a fight', 'Slimy', 'Willing to trade up to £7 worth of chutney', 'Own social media profile',
       'Born on the streets', 'Fear of being loved', 'Has memorized Shrek', 'Deaf in one ear', 'Emotionally abusive',
       'Skilled musician', 'Cardboard box owner', 'No depth perception', 'Able to grunt', 'Always carry a whip', 'Open',
       'Yes-person', 'Chainsaws for hands', 'Touching backstory', 'Is actually an undercover boss',
-      'Deep', 'Sonic screwdriver', 'Sus', 'Easily angered', 'Emphatically not a racist', 'Father is a doctor',
+      'Deep', 'Sonic screwdriver', 'Sus', 'Easily angered', 'Emphatically not a racist', 'Father is a respected author',
       'Extensive knowledge of memes', 'Will wear cape to work', 'Multiple tooth cavities', 'Pro-death', 'I value you as a person',
       'Member of of the Conservative Christian Association', 'Can WordArt', 'Intermediate in Sarcasm', 'Is committed 100% to everything',
       'Beautiful teeth', 'Likes chocolate', 'Has had a stroke', 'Has a monocle', 'Multiple personality disorder', 'Exceptional number of knuckles',
@@ -303,9 +307,11 @@
       'Proud adoptive parent of a gay dog', 'Strong and stable', 'Into mindfulness', 'Cancelled over five times',
       'Maintains and uses herb garden', "Phone cable broke in 2008 and reliant since then on borrowing others' chargers",
       'Had realisation that was not in the right career in 2015 but did nothing about it', 'Penetrating gaze',
-      'Lorem ipsum dolor sit amet', 'The force', 'Underdeveloped sense of fun', 'Clockwork pacemaker',
+      'Willing to learn how to read', 'The force', 'My idea of "fun" is wearing something purple', 'Clockwork pacemaker',
+      'Owns a tank of newts', 'Has no ears', 'Can smell time', 'Surprisingly tall (literally)', 'Thinks of self as being good with children', 
+      'Has seen it all', 'Quite up-to-date', 'Is covered in bees', 'A breakfast truther', 'King of Heaven and Lord of all the Universe', 'No concept of personal space', 'Radically honest', "World's lowest chess ranking", 'Member of the human race', 'Knows over 3 kinds of cheese',
       'Brokered lasting peace between two colonies of fire ants', 'Clown shoes']
-    const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Porn Star', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'TSA Agent', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent']
+    const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'influencer', 'confidence trickster', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Porn Star', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'TSA Agent', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent']
     const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
 
     const promptsSection = document.getElementById('promptsSection')
