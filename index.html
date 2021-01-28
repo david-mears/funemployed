@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
   <style>
-    /* Slate Star Codex-style styles adapted from https://applieddivinitystudies.com/slatestarsubstack/ */
+    /* Slate Star Codex-style styles */
     body {
-      background-color: #808080
+      background-color: #808080;
+      font-family: Georgia, "Bitstream Charter", serif;
+      font-size: 15px;
+      line-height: 23px;
     }
 
     .codex {
-      height: 60px;
+      height: 65px;
       position: relative;
       top: 8px;
       margin-right: 10px;
@@ -21,22 +24,22 @@
 
     article div {
       color: #333;
-      font: 12px/20px Verdana,  sans-serif;
+      font: 15px/25px Verdana,  sans-serif;
     }
 
     h1 {
-      font-size: 16px;
-      line-height: 1.3em;
+      font-size: 20px;
+      line-height: 1.6em;
       margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       font-family: Georgia, "Bitstream Charter", serif;
       font-weight: normal;
     }
 
     .post-date {
       color: #888;
-      font-size: 10px;
+      font-size: 12.5px;
       font-family: Verdana, sans-serif;
       letter-spacing: 1px;
       background: #f9f9f9;
@@ -49,7 +52,7 @@
 
     .post-date:hover {
       text-decoration: underline;
-      color: blue;
+      color: rgba(79,115,193,1);
     }
 
     .single-post {
@@ -58,12 +61,17 @@
       background: #fff;
       padding: 20px 28px;
       margin-bottom: 10px;
+      height: 140vh;
     }
 
     .single-post-container {
-      background: rgb(240, 240, 240);
-      padding: 10px 0px;
-      border-radius: 5px;
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-left: 10px;
+      width: 70%;
     }
 
     .wrap {
@@ -73,9 +81,25 @@
     }
 
     .container {
+      background: rgb(240, 240, 240);
       justify-content: center;
-      width: 80%;
-      margin: auto;
+    }
+
+    .widget {
+      margin-left: 10px;
+      padding: 15px;
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #fff;
+      width: 23%;
+      background-color: #E4E4E4;
+      text-shadow: 1px 1px 1px #ffffff;
+    }
+
+    .widget p {
+      color: #666;
     }
 
     textarea {
@@ -88,27 +112,18 @@
       text-decoration: underline;
     }
 
-    .post {
-      padding: 0;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      padding-bottom: 8px;
-    }
-
     .undertitle {
       color: #ccc;
-      font-size: 10px;
-      line-height: 10px;
+      font-size: 12.5px;
+      line-height: 12.5px;
       font-family: "Josefin Sans", "Times New Roman", Times, serif;
       text-transform: uppercase;
-      margin-top: 13px;
+      margin-top: 30px;
     }
 
     .topbar {
       text-decoration: none;
-      font-size: 64px;
+      font-size: 80px;
       max-height: 100px;
       color: white;
       font-family: 'Raleway', Open Sans, Arial, sans-serif;
@@ -116,8 +131,18 @@
       letter-spacing: 2px;
       background: linear-gradient(to bottom, rgba(139,171,232,1) 0%, rgba(79,115,193,1) 100%);
       padding-top: 50px;
-      padding-bottom: 21px;
+      padding-bottom: 30px;
       border-radius: 5px;
+    }
+
+    .welcome .post-date {
+      font-size: 120%;
+      display: block;
+      text-align: center;
+      width: 50%;
+      margin-bottom: 50px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -129,13 +154,12 @@
       <h2 class="undertitle">All the fun of the job hunt, none of the stress of work</h2>
     </div>
 
-    <div class="single-post-container">
-      <div class="container">
+    <div class="container">
+      <div class="single-post-container">
         <div class="single-post">
-
           <article>
             <h1 id="wanted">Jobs Board</h1>
-            <div>
+            <div class="welcome" id="buttons">
               <p id="jobAd" class="post-date">Click here to post a new job ad</p>
               <p id="newResume" class="post-date">Click here to apply</p>
             </div>
@@ -156,7 +180,7 @@
               <textarea></textarea>
               <p id="promptsButton" class="post-date">Get interview question prompts</p>
               <div id="promptsRevealed" style="display: none">
-                <p>Question prompts:</p>
+                <p><strong>Question prompts:</strong></p>
                 <p>I see in your resume you write "<span id="qual5"></span>". Why do you think that's important for this job?</p>
                 <p>It says here "<span id="qual6"></span>", which is good. Can you give an example?</p>
                 <p>In your resume you list "<span id="qual7"></span>". Why shouldn't I throw you out of my office right now?</p>
@@ -173,33 +197,22 @@
           </article>
         </div>
       </div>
+      <div class="widget">
+        <h1>Meta</h1>
+        <p><strong>How to play</strong></p>
+        <p>One player is the employer. The rest are applicants.</p>
+        <p>The employer announces the role they are looking for (generated by clicking 'click here to post a new job ad'.</p>
+        <p>The applicants should then click 'click here to apply', which will reveal their skills and qualifications. These are the things the applicants will try to highlight in their interview.</p>
+        <p>Then, the players are called one by one to a short interview with the employer, during which the employer may ask any question relevant to the role, and the applicants should make the best case they can for their employment based on the qualities and experiences in their resume.</p>
+        <p>Depending on improv skills, you might find that it's most fun when the applicant doesn't have sight of their resume until the start of the interview. That way, applicants are not tempted to plan their interview when they should be listening to the other interviews. Alternatively, you could allow a short time for all the players to gather their thoughts in advance of the first interview.</p>
+        <p>Some interview question prompts are provided (with a 'get interview question prompt' button) if the interviewer would like inspiration.</p>
+        <p>After each round of interviews, the employer declares who they think did the best. They might find it helpful to take notes in the interview notes box, either to jog memory of each applicant or simply to get into the role better.</p>
+        <p>Finally, a new player takes over the role of employer for the next round.</p>
+      </div>
     </div>
   </div>
 
   <script>
-    const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Porn Star', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'TSA Agent', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent']
-    const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
-
-    const wanted = document.getElementById('wanted')
-    const promptsSection = document.getElementById('promptsSection')
-
-    document.getElementById('jobAd').addEventListener('click', function (event) {
-      resume.style.display = 'none';
-      promptsSection.style.display = 'initial';
-      wanted.innerText = wanteds[Math.floor(Math.random() * wanteds.length)] + ": " + jobs[Math.floor(Math.random() * jobs.length)];
-      document.getElementById('promptsRevealed').style.display = 'none';
-    }, false);
-
-    document.getElementById('promptsButton').addEventListener('click', function (event) {
-      const quals = qualifications.sort(() => Math.random() - 0.5);
-      qual5.innerText = quals[0]
-      qual6.innerText = quals[1]
-      qual7.innerText = quals[2]
-      qual8.innerText = quals[3]
-      document.getElementById('promptsRevealed').style.display = 'initial';
-    }, false);
-
-
     const qualifications = ['Moderately good in bed', 'Dirty mind', 'Allergic to everything', 'Is a snake', 'Always hungry',
       'Living a lie', 'A nasty rash', 'Smells like onions', 'Disorganized', 'Avid reader', 'Got a big net', 'Glorious mane',
       'Lives in own reality', 'Somewhat paranoid', 'Likes to pretend that on spaceship', 'Loose-limbed', 'Motivated by badges',
@@ -292,9 +305,35 @@
       'Had realisation that was not in the right career in 2015 but did nothing about it', 'Penetrating gaze',
       'Lorem ipsum dolor sit amet', 'The force', 'Underdeveloped sense of fun', 'Clockwork pacemaker',
       'Brokered lasting peace between two colonies of fire ants', 'Clown shoes']
+    const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Porn Star', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'TSA Agent', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent']
+    const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
+
+    const promptsSection = document.getElementById('promptsSection')
     const resume = document.getElementById('resume')
+    const wanted = document.getElementById('wanted')
+    const buttons = document.getElementById('buttons')
+
+
+    document.getElementById('jobAd').addEventListener('click', function (event) {
+      buttons.className = 'noclass';
+      resume.style.display = 'none';
+      promptsSection.style.display = 'initial';
+      wanted.innerText = wanteds[Math.floor(Math.random() * wanteds.length)] + ": " + jobs[Math.floor(Math.random() * jobs.length)];
+      document.getElementById('promptsRevealed').style.display = 'none';
+    }, false);
+
+    document.getElementById('promptsButton').addEventListener('click', function (event) {
+      const quals = qualifications.sort(() => Math.random() - 0.5);
+      qual5.innerText = quals[0]
+      qual6.innerText = quals[1]
+      qual7.innerText = quals[2]
+      qual8.innerText = quals[3]
+      document.getElementById('promptsRevealed').style.display = 'initial';
+    }, false);
+
     document.getElementById('newResume').addEventListener('click', function (event) {
       wanted.innerText = "Curriculum Vitae"
+      buttons.className = 'noclass';
       resume.style.display = 'initial';
       const quals = qualifications.sort(() => Math.random() - 0.5);
       qual0.innerText = quals[0]
