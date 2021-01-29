@@ -182,21 +182,8 @@
             <div id="promptsSection" style="display: none">
               <p><strong>Interview notes</strong></p>
               <textarea></textarea>
-              <p id="promptsButton" class="post-date">Get interview question prompts</p>
-              <div id="promptsRevealed" style="display: none">
-                <p><strong>Question prompts:</strong></p>
-                <p>I see in your resume you write "<span id="qual5"></span>". Why do you think that's important for this job?</p>
-                <p>It says here "<span id="qual6"></span>", which is good. Can you give an example?</p>
-                <p>In your resume you list "<span id="qual7"></span>". Why shouldn't I throw you out of my office right now?</p>
-                <p>Now, one of the things that stood out to me in your resume was "<span id="qual8"></span>". How do you bring that aspect of yourself to your work?</p>
-                <p>What would you say is your best weakness?</p>
-                <p>What would you say is your <i>least</i> impressive strength?</p>
-                <p>We're looking for someone with leadership potential. Is that something you're interested in?</p>
-                <p>Tell me about a time you showed team-work skills.</p>
-                <p>Tell me about a time you failed. What did you learn from the experience?</p>
-                <p>How is your experience relevant to this role?</p>
-                <p>How do you explain the gaps in your employment history?</p>
-              </div>
+              <p id="promptsButton" class="post-date">Get interview question prompt</p>
+              <p id="questionPrompt"></p>
             </div>
           </article>
         </div>
@@ -316,7 +303,7 @@
       'Can be quite stubborn', 'Took a Udemy course on eating with a spoon', 'Laughs at anyone with a different accent',
       "Has no time to learn other people's names", 'A good judge of hair colour', 'Does own laundry',
       'Has been in a relationship for almost 2 years', 'Possesses a big head', 'Gives unsolicited advice',
-      'Something of a mansplainer/womansplainer', 'Takes a lot of selfies']
+      'Something of a mansplainer/womansplainer', 'Takes a lot of selfies', 'Was invited to take a course online in Active Listening']
 
     const randomQualifications = (number) => {
       quals = qualifications.sort(() => Math.random() - 0.5);
@@ -324,7 +311,7 @@
       quals.slice(0, number).forEach((qual) => {
         if (qual == 'Can I bring my sidekick, Pencil Boy?') {
           qual = qual.replace('Boy', ['Girl', 'Woman', 'Man'].sort(() => Math.random() - 0.5)[0])
-          qual = qual.replace('Pencil', ['Water', 'Sachet', 'Chewing Gum', 'Watch', 'Camera', 'Dictionary', 'Polish', 'Umbrella', 'Scissor', 'Comb', 'Rubbish', 'Mirror', 'Toothbrush', 'Battery', 'Newspaper'].sort(() => Math.random() - 0.5)[0])
+          qual = qual.replace('Pencil', ['Water', 'Sachet', 'Chewing Gum', 'Watch', 'Camera', 'Dictionary', 'Polish', 'Mushroom', 'Umbrella', 'Scissor', 'Comb', 'Rubbish', 'Mirror', 'Toothbrush', 'Battery', 'Newspaper', 'Replacement'].sort(() => Math.random() - 0.5)[0])
         }
         returnQuals.push(qual)
         qualifications = quals.slice(number, (quals.length + 1)) // remove used qualifications
@@ -333,7 +320,6 @@
     }
 
     const jobs = ['sewer cleaner', 'chimney sweep', 'construction worker', 'pool cleaner', 'influencer', 'confidence trickster', 'window washer', 'meat processor', 'A&E nurse', 'dog groomer', 'dishwasher', 'Bartender', 'Psychic', 'Celebrity Impersonator ', 'Model ', 'Magician ', 'Author', 'Queen ', 'Executioner', 'Dominatrix', 'Drill Sergeant', 'Game Show Host', 'Altar Boy', 'School Nurse', 'Motivational Speaker', 'Professional Athlete', 'Intern', 'Mad Scientist', 'Taxi Driver', 'Private Detective', 'B-Movie Actor', 'Fortune Cookie Writer', 'Plumber', 'Singer', 'Mime', 'Super Hero', 'Reality Show Contestant', 'Cheerleader', 'News Anchor', 'Therapist', 'Butler', 'Nanny', 'Tea Party Candidate', 'Archaeologist', 'Proctologist', 'Gym Teacher', 'Bounty Hunter', 'Masseuse', 'Televangelist', 'Child Actor', 'Competitive Eater', 'Used Car Salesman', 'Live Action Role Player', 'Stunt Double', 'Politician', 'Venture Capitalist', 'Personal Trainer', 'Pirate', 'Priest', 'Lawyer', 'Dictator', 'Flight Attendant', 'Wet Nurse', 'Gangster', 'World Record Holder', 'Gynecologist', 'Ice Cream Maker', 'Housewife', 'Auctioneer', 'Butcher', 'Barista', 'Bachelor', 'Astronaut', 'Super Villain', 'UN Weapons Inspector', 'Secret Agent', 'Burglar', 'Fashion designer', 'Poker player', 'Pest control person', 'Tattoo artist', 'Art school director', 'Fishing coach', 'Hair stylist', 'Explorer', 'Nanny']
-    const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
 
     const promptsSection = document.getElementById('promptsSection')
     const resume = document.getElementById('resume')
@@ -344,21 +330,31 @@
       buttons.className = 'noclass';
       resume.style.display = 'none';
       promptsSection.style.display = 'initial';
+      const wanteds = ['wanted', 'hiring', 'now hiring', 'seeking', 'apply now', 'needed']
       wanted.innerText = wanteds[Math.floor(Math.random() * wanteds.length)] + ": " + jobs[Math.floor(Math.random() * jobs.length)];
       document.getElementById('promptsRevealed').style.display = 'none';
     }, false);
 
     document.getElementById('promptsButton').addEventListener('click', function (event) {
       const quals = randomQualifications(4)
-      qual5.innerText = quals[0]
-      qual6.innerText = quals[1]
-      qual7.innerText = quals[2]
-      qual8.innerText = quals[3]
-      document.getElementById('promptsRevealed').style.display = 'initial';
+      const weakSuperlative = ['best', 'most interesting', 'most impressive', 'most shameful', 'most respectable'].sort(() => Math.random() - 0.5)[0]
+      const questionPrompts = [
+        "I see in your resume you write '" + quals[0] + "'. Why do you think that's important for this job?",
+        "It says here '" + quals[1] + "', which is good. Can you give an example?",
+        "In your resume you list '" + quals[2] + "'. Why shouldn't I throw you out of my office right now?",
+        "Now, one of the things that stood out to me in your resume was '" + quals[3] + "'. How do you bring that aspect of yourself to your work?",
+        "What would you say is your " + weakSuperlative + " weakness?",
+        "What would you say is your <i>least</i> impressive strength?",
+        "We're looking for someone with leadership potential. Is that something you're interested in?",
+        "Tell me about a time you showed team-work skills.",
+        "Tell me about a time you failed. What did you learn from the experience?",
+        "How is your experience relevant to this role?",
+        "How do you explain the gaps in your employment history?"]
+      document.getElementById('questionPrompt').innerHTML = questionPrompts.sort(() => Math.random() - 0.5)[0]
     }, false);
 
     document.getElementById('newResume').addEventListener('click', function (event) {
-      wanted.innerText = "Curriculum Vitae"
+      wanted.innerText = ["Curriculum Vitae", "Resume"].sort(() => Math.random() - 0.5)[0]
       buttons.className = 'noclass';
       resume.style.display = 'initial';
       const quals = randomQualifications(5)
